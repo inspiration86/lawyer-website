@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import {InputNumberModule} from 'primeng/inputnumber';
-import {InputMaskModule} from 'primeng/inputmask';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ButtonModule} from 'primeng/button';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 const primengComponents = [
-  InputMaskModule,
   InputNumberModule,
-  KeyFilterModule
+  KeyFilterModule,
+  FileUploadModule,
+  ButtonModule,
+  ConfirmDialogModule
 ];
 
 @NgModule({
