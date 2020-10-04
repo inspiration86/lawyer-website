@@ -9,7 +9,6 @@
 .contact-form h2 {
   font-size: 25px;
   font-weight: 600;
-  font-family: Playfair Display,serif;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -251,7 +250,7 @@
 .pricing-table .ptable-action a {
   display: inline-block;
   padding: 10px 20px;
-  color: #037160;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -260,17 +259,17 @@
 }
 
 .pricing-table .ptable-action a:hover {
-  color: #1C1E20;
+  color: #ffffff;
   background: #037160;
 }
 
 .pricing-table .ptable-item.featured-item .ptable-action a {
-  color: #1C1E20;
+  color: #ffffff;
   background: #037160;
 }
 
 .pricing-table .ptable-item.featured-item .ptable-action a:hover {
-  color: #037160;
+  color: #ffffff;
   background: #1C1E20;
 }
 

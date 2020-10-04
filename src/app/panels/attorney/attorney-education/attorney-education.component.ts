@@ -25,10 +25,10 @@ export class AttorneyEducationComponent implements AfterViewInit {
   constructor(public dialog: MatDialog,
               protected confirmationService: ConfirmationService) {
     const educationList = [
-      new AttorneyEducationModel(1, 'Shariaty', 'Bachelor',
+      new AttorneyEducationModel(1, 1, 'Shariaty', 'Bachelor',
         'Computer', '1392', '1394', false,
         '', false, '' ) ,
-      new AttorneyEducationModel(2, 'Shariaty', 'Bachelor', 'Computer', '1395', '1397', false, '', true, '')
+      new AttorneyEducationModel(2, 1, 'Shariaty', 'Bachelor', 'Computer', '1395', '1397', false, '', true, '')
     ];
 
     // Assign the data to the data source for the table to render
@@ -45,6 +45,7 @@ export class AttorneyEducationComponent implements AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
+    console.log(filterValue);
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
@@ -56,6 +57,7 @@ export class AttorneyEducationComponent implements AfterViewInit {
         width: '800px',
         data: new AttorneyEducationModel(
           row.id,
+          row.attorneyId,
           row.university,
           row.grade,
           row.major,

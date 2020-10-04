@@ -11,6 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio'
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const materialComponents = [
   MatButtonModule,
@@ -24,7 +28,11 @@ const materialComponents = [
   MatFormFieldModule,
   MatTooltipModule,
   MatDialogModule,
-  MatStepperModule
+  MatStepperModule,
+  MatListModule,
+  MatRadioModule,
+  MatTabsModule,
+  MatCheckboxModule
 ];
 
 @NgModule({

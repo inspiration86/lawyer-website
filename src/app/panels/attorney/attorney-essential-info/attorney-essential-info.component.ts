@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
@@ -7,6 +7,8 @@ import {AttorneyEditDialogEducationComponent} from './attorney-edit-dialog-educa
 import {ConfirmationService} from 'primeng/api';
 import {AttorneyEditDialogWorkComponent} from './attorney-edit-dialog-work/attorney-edit-dialog-work.component';
 import {LegalUserType} from '../../../models/attorney/ILegalUserType';
+import {ConsultationCategoryModel} from '../../../models/consultation-category/ConsultationCategoryModel';
+import {MatSelectionList} from '@angular/material/list';
 
 @Component({
   selector: 'app-attorney-essential-info',
@@ -15,6 +17,8 @@ import {LegalUserType} from '../../../models/attorney/ILegalUserType';
   providers: [ConfirmationService]
 })
 export class AttorneyEssentialInfoComponent implements OnInit {
+
+  @ViewChild('subCategoriesElement') subCategoriesList: MatSelectionList;
 
   personalForm: FormGroup;
   educationForm: FormGroup;
@@ -107,6 +111,9 @@ export class AttorneyEssentialInfoComponent implements OnInit {
   workDataSource: MatTableDataSource<AttorneyWorkModel>;
   public educationList: AttorneyEducationModel[] = [];
   public workList: AttorneyWorkModel[] = [];
+  public list: ConsultationCategoryModel[] = [];
+  public subCategories: ConsultationCategoryModel[] = [];
+  public selectedSubCategories: string[] = [];
 
   constructor(public formBuilder: FormBuilder,
               public dialog: MatDialog,
@@ -128,9 +135,73 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       {name: 'کارشناس حقوقی', code: '6'},
       {name: 'کارشناس رسمی دادگستری', code: '7'}
     ];
+
+    this.list = [
+      new ConsultationCategoryModel(
+        1, 'حقوقی', 0
+      ),
+      new ConsultationCategoryModel(
+        2, 'کیفری - مجازات اسلامی', 0
+      ),
+      new ConsultationCategoryModel(
+        3, 'کیفری - جرائم رایانه ای', 0
+      ),
+      new ConsultationCategoryModel(
+        4, 'کیفری - مبارزه با مواد مخدر', 0
+      ),
+      new ConsultationCategoryModel(
+        5, 'دادرسی', 0
+      ),
+      new ConsultationCategoryModel(
+        6, 'حقوقی 1', 1
+      ),
+      new ConsultationCategoryModel(
+        7, 'حقوقی 2', 1
+      ),
+      new ConsultationCategoryModel(
+        8, 'حقوقی 3', 1
+      ),
+      new ConsultationCategoryModel(
+        9, 'مجازات اسلامی 1', 2
+      ),
+      new ConsultationCategoryModel(
+        10, 'مجازات اسلامی 2', 2
+      ),
+      new ConsultationCategoryModel(
+        11, 'مجازات اسلامی 3', 2
+      ),
+      new ConsultationCategoryModel(
+        12, 'جرائم رایانه ای 1', 3
+      ),
+      new ConsultationCategoryModel(
+        13, 'جرائم رایانه ای 2', 3
+      ),
+      new ConsultationCategoryModel(
+        14, 'جرائم رایانه ای 3', 3
+      ),
+      new ConsultationCategoryModel(
+        12, 'مبارزه با مواد مخدر 1', 4
+      ),
+      new ConsultationCategoryModel(
+        13, 'مبارزه با مواد مخدر 2', 4
+      ),
+      new ConsultationCategoryModel(
+        14, 'مبارزه با مواد مخدر 3', 4
+      ),
+      new ConsultationCategoryModel(
+        12, 'دادرسی 1', 5
+      ),
+      new ConsultationCategoryModel(
+        13, 'دادرسی 2', 5
+      ),
+      new ConsultationCategoryModel(
+        14, 'دادرسی 3', 5
+      )
+    ];
   }
 
   ngOnInit(): void {
+    this.subCategories = this.list.filter(x => x.parent !== 0);
   }
 
   createPersonalForm(): void {
@@ -321,6 +392,7 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       width: '800px',
       data: new AttorneyEducationModel(
         row.id,
+        row.attorneyId,
         row.university,
         row.grade,
         row.major,
@@ -370,6 +442,7 @@ export class AttorneyEssentialInfoComponent implements OnInit {
       width: '800px',
       data: new AttorneyWorkModel(
         row.id,
+        row.attorneyId,
         row.company,
         row.position,
         row.startYear,
@@ -423,4 +496,33 @@ export class AttorneyEssentialInfoComponent implements OnInit {
   save(): void {
     console.log('saved');
   }
+
+  onSelectionChange(): void {
+    this.selectedSubCategories = this.getSelected(this.list);
+  }
+
+  getSelected(list: ConsultationCategoryModel[]): string[] {
+    const selected: string[] = [];
+    const values: any[] = this.subCategoriesList.selectedOptions.selected.map(s => s.value);
+
+    if (values !== null){
+      // tslint:disable-next-line:only-arrow-functions
+      values.forEach( function(value): void {
+        const row = list.find(x => x.id === value);
+        selected.push(row.title);
+      });
+    }
+    return selected;
+  }
+
+
+  // tslint:disable-next-line:typedef
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue);
+    this.subCategories = this.list.filter(
+      x => x.title.includes(filterValue.trim().toLowerCase())
+        && x.parent !== 0 );
+  }
+
 }

@@ -236,7 +236,7 @@ mat-icon {
   padding-bottom: 50px;
 }
 .content .content-inner {
-  padding: 20px 260px 0 0px;
+  padding: 20px 290px 0 0px;
 }
 .content .content-wrapper {
   padding: 20px;
@@ -439,4 +439,13 @@ h2.section-title {
 
 .green-color{
   color: #037160!important;
+}
+
+a{
+  cursor: pointer!important;
+}
+
+.fa-outline{
+  -webkit-text-stroke: 1px #037160;
+  -webkit-text-fill-color: transparent;
 }

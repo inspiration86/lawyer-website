@@ -70,9 +70,9 @@
                   <div class="row element-detail"
                        [@detailExpand]="row.isExpanded ? 'expanded' : 'collapsed'">
                     <table class="table table-light table-active" *ngIf="row.description">
-                      <tr>
+                      <tr class="text-right">
                         <td>
-                          {{ row.description }}
+                          توضیحات: {{ row.description }}
                         </td>
                       </tr>
                     </table>

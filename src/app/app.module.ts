@@ -40,6 +40,9 @@ import { InPersonConsultationComponent } from './pages/consultation/in-person-co
 import { OnlineConsultationComponent } from './pages/consultation/online-consultation/online-consultation.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { ServiceDetailComponent } from './pages/service/service-detail/service-detail.component';
+import { InPersonSelectCategoryComponent } from './pages/consultation/in-person-consultation/in-person-select-category/in-person-select-category.component';
+import { TelSelectCategoryComponent } from './pages/consultation/tel-consultation/tel-select-category/tel-select-category.component';
+import { TelSelectConsultorComponent } from './pages/consultation/tel-consultation/tel-select-consultor/tel-select-consultor.component';
 
 import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
@@ -53,17 +56,26 @@ import { AdminMenuComponent } from './panels/admin/shared/admin-menu/admin-menu.
 import { AdminUserComponent } from './panels/admin/admin-user/admin-user.component';
 import { AdminBannerComponent } from './panels/admin/admin-banner/admin-banner.component';
 import { AdminAddBannerComponent } from './panels/admin/admin-banner/admin-add-banner/admin-add-banner.component';
-import { AdminEditBannerComponent } from './panels/admin/admin-banner/admin-edit-banner/admin-edit-banner.component';
 import { AdminBlogComponent } from './panels/admin/admin-blog/admin-blog.component';
 import { AdminAddBlogComponent } from './panels/admin/admin-blog/admin-add-blog/admin-add-blog.component';
 import { AdminAttorneyComponent } from './panels/admin/admin-attorney/admin-attorney.component';
 import { AdminAddAttorneyComponent } from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
-import { AdminCommentComponent } from './panels/admin/admin-comment/admin-comment.component';
-import { AdminReplyDialogCommentComponent } from './panels/admin/admin-comment/admin-reply-dialog-comment/admin-reply-dialog-comment.component';
-import { AdminEditDialogCommentComponent } from './panels/admin/admin-comment/admin-edit-dialog-comment/admin-edit-dialog-comment.component';
 import { AdminEditDialogBlogComponent } from './panels/admin/admin-blog/admin-edit-dialog-blog/admin-edit-dialog-blog.component';
 import { AdminEditDialogBannerComponent } from './panels/admin/admin-banner/admin-edit-dialog-banner/admin-edit-dialog-banner.component';
-import { AdminEditDialogAttorneyComponent } from './panels/admin/admin-attorney/admin-edit-dialog-attorney/admin-edit-dialog-attorney.component';
+import { AdminProfileComponent } from './panels/admin/admin-profile/admin-profile.component';
+import { AdminEditDialogUserComponent } from './panels/admin/admin-user/admin-edit-dialog-user/admin-edit-dialog-user.component';
+import { AdminAttorneyDetailComponent } from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
+import { AdminLegalCaseComponent } from './panels/admin/admin-legal-case/admin-legal-case.component';
+import { AdminConsultorComponent } from './panels/admin/admin-consultor/admin-consultor.component';
+import { AdminAddConsultorComponent } from './panels/admin/admin-consultor/admin-add-consultor/admin-add-consultor.component';
+import { AdminEditDialogConsultorComponent } from './panels/admin/admin-consultor/admin-edit-dialog-consultor/admin-edit-dialog-consultor.component';
+import { AdminAddLegalCaseComponent } from './panels/admin/admin-legal-case/admin-add-legal-case/admin-add-legal-case.component';
+import { AdminEditDialogLegalCaseComponent } from './panels/admin/admin-legal-case/admin-edit-dialog-legal-case/admin-edit-dialog-legal-case.component';
+import { AdminInPersonRequestComponent } from './panels/admin/admin-in-person-request/admin-in-person-request.component';
+import { AdminTelRequestComponent } from './panels/admin/admin-tel-request/admin-tel-request.component';
+import { AdminOnlineRequestComponent } from './panels/admin/admin-online-request/admin-online-request.component';
+import { AdminReplyDialogOnlineRequestComponent } from './panels/admin/admin-online-request/admin-reply-dialog-online-request/admin-reply-dialog-online-request.component';
+import { AdminEditDialogOnlineRequestComponent } from './panels/admin/admin-online-request/admin-edit-dialog-online-request/admin-edit-dialog-online-request.component';
 
 import { AttorneyDashboardComponent } from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
 import { AttorneyMenuComponent } from './panels/attorney/shared/attorney-menu/attorney-menu.component';
@@ -71,18 +83,22 @@ import { AttorneyProfileComponent } from './panels/attorney/attorney-profile/att
 import { AttorneyWorkComponent } from './panels/attorney/attorney-work/attorney-work.component';
 import { AttorneyAddWorkComponent } from './panels/attorney/attorney-work/attorney-add-work/attorney-add-work.component';
 import { AttorneyEducationComponent } from './panels/attorney/attorney-education/attorney-education.component';
+// tslint:disable-next-line:max-line-length
 import { AttorneyAddEducationComponent } from './panels/attorney/attorney-education/attorney-add-education/attorney-add-education.component';
 import { AttorneyLegalCaseComponent } from './panels/attorney/attorney-legal-case/attorney-legal-case.component';
-import { AdminProfileComponent } from './panels/admin/admin-profile/admin-profile.component';
 import { AttorneyEssentialInfoComponent } from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
-import {MatRadioModule} from '@angular/material/radio';
 import { AttorneyEditDialogEducationComponent } from './panels/attorney/attorney-essential-info/attorney-edit-dialog-education/attorney-edit-dialog-education.component';
 import { AttorneyEditDialogWorkComponent } from './panels/attorney/attorney-essential-info/attorney-edit-dialog-work/attorney-edit-dialog-work.component';
-import {DropdownModule} from 'primeng/dropdown';
-import {RadioButtonModule} from 'primeng/radiobutton';
 import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 
 
+import { UserDashboardComponent } from './panels/user/user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './panels/user/user-profile/user-profile.component';
+import { UserMenuComponent } from './panels/user/shared/user-menu/user-menu.component';
+import { ConsultorDashboardComponent } from './panels/consultor/consultor-dashboard/consultor-dashboard.component';
+import { ConsultorMenuComponent } from './panels/consultor/shared/consultor-menu/consultor-menu.component';
+import {DpDatePickerModule} from 'ng2-jalali-date-picker';
+import { AdminAssignRequestDialogComponent } from './panels/admin/admin-in-person-request/admin-assign-request-dialog/admin-assign-request-dialog.component';
 
 @NgModule({
   declarations: [
@@ -116,17 +132,14 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
     AdminUserComponent,
     AdminBannerComponent,
     AdminAddBannerComponent,
-    AdminEditBannerComponent,
     AdminBlogComponent,
     AdminAddBlogComponent,
     AdminAttorneyComponent,
     AdminAddAttorneyComponent,
-    AdminCommentComponent,
-    AdminReplyDialogCommentComponent,
-    AdminEditDialogCommentComponent,
+    AdminReplyDialogOnlineRequestComponent,
+    AdminEditDialogOnlineRequestComponent,
     AdminEditDialogBlogComponent,
     AdminEditDialogBannerComponent,
-    AdminEditDialogAttorneyComponent,
     OnlineConsultationComponent,
     TelConsultationComponent,
     InPersonConsultationComponent,
@@ -144,7 +157,27 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
     AttorneyEssentialInfoComponent,
     AttorneyEditDialogEducationComponent,
     AttorneyEditDialogWorkComponent,
-    AttorneyTelConsultationComponent
+    AttorneyTelConsultationComponent,
+    AdminEditDialogUserComponent,
+    AdminAttorneyDetailComponent,
+    AdminLegalCaseComponent,
+    AdminConsultorComponent,
+    AdminAddConsultorComponent,
+    AdminEditDialogConsultorComponent,
+    UserDashboardComponent,
+    UserProfileComponent,
+    UserMenuComponent,
+    AdminAddLegalCaseComponent,
+    AdminEditDialogLegalCaseComponent,
+    AdminInPersonRequestComponent,
+    AdminTelRequestComponent,
+    AdminOnlineRequestComponent,
+    InPersonSelectCategoryComponent,
+    TelSelectCategoryComponent,
+    TelSelectConsultorComponent,
+    ConsultorDashboardComponent,
+    ConsultorMenuComponent,
+    AdminAssignRequestDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -160,9 +193,7 @@ import { AttorneyTelConsultationComponent } from './panels/attorney/attorney-tel
     NgxCaptchaModule,
     PrimengModule,
     HttpClientModule,
-    MatRadioModule,
-    DropdownModule,
-    RadioButtonModule
+    DpDatePickerModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

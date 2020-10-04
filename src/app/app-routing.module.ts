@@ -27,7 +27,6 @@ import {AdminAddBlogComponent} from './panels/admin/admin-blog/admin-add-blog/ad
 import {AdminAttorneyComponent} from './panels/admin/admin-attorney/admin-attorney.component';
 import {AdminAddAttorneyComponent} from './panels/admin/admin-attorney/admin-add-attorney/admin-add-attorney.component';
 import {AdminUserComponent} from './panels/admin/admin-user/admin-user.component';
-import {AdminCommentComponent} from './panels/admin/admin-comment/admin-comment.component';
 
 import {AttorneyDashboardComponent} from './panels/attorney/attorney-dashboard/attorney-dashboard.component';
 import {AttorneyWorkComponent} from './panels/attorney/attorney-work/attorney-work.component';
@@ -39,6 +38,21 @@ import {AttorneyLegalCaseComponent} from './panels/attorney/attorney-legal-case/
 import {AttorneyTelConsultationComponent} from './panels/attorney/attorney-tel-consultation/attorney-tel-consultation.component';
 import {AdminProfileComponent} from './panels/admin/admin-profile/admin-profile.component';
 import {AttorneyEssentialInfoComponent} from './panels/attorney/attorney-essential-info/attorney-essential-info.component';
+import {AdminAttorneyDetailComponent} from './panels/admin/admin-attorney/admin-attorney-detail/admin-attorney-detail.component';
+import {AdminLegalCaseComponent} from './panels/admin/admin-legal-case/admin-legal-case.component';
+import {AdminAddConsultorComponent} from './panels/admin/admin-consultor/admin-add-consultor/admin-add-consultor.component';
+import {AdminConsultorComponent} from './panels/admin/admin-consultor/admin-consultor.component';
+import {AdminInPersonRequestComponent} from './panels/admin/admin-in-person-request/admin-in-person-request.component';
+import {AdminAddLegalCaseComponent} from './panels/admin/admin-legal-case/admin-add-legal-case/admin-add-legal-case.component';
+import {AdminOnlineRequestComponent} from './panels/admin/admin-online-request/admin-online-request.component';
+import {AdminTelRequestComponent} from './panels/admin/admin-tel-request/admin-tel-request.component';
+import {UserDashboardComponent} from './panels/user/user-dashboard/user-dashboard.component';
+import {UserProfileComponent} from './panels/user/user-profile/user-profile.component';
+import {InPersonSelectCategoryComponent} from './pages/consultation/in-person-consultation/in-person-select-category/in-person-select-category.component';
+import {TelSelectCategoryComponent} from './pages/consultation/tel-consultation/tel-select-category/tel-select-category.component';
+import {TelSelectConsultorComponent} from './pages/consultation/tel-consultation/tel-select-consultor/tel-select-consultor.component';
+
+import {ConsultorDashboardComponent} from './panels/consultor/consultor-dashboard/consultor-dashboard.component';
 
 const routes: Routes = [
   {path : '' , component : HomeComponent},
@@ -54,13 +68,17 @@ const routes: Routes = [
   {path : 'consultation' , component : ConsultationComponent},
   {path : 'online-consultation' , component : OnlineConsultationComponent},
   {path : 'tel-consultation' , component : TelConsultationComponent},
+  {path : 'tel-select-category' , component : TelSelectCategoryComponent},
+  {path : 'tel-select-consultor' , component : TelSelectConsultorComponent},
   {path : 'in-person-consultation' , component : InPersonConsultationComponent},
+  {path : 'in-person-select-category' , component : InPersonSelectCategoryComponent},
 
   {path : 'login' , component : LoginComponent},
   {path : 'register' , component : RegisterComponent},
   {path : 'forgot-password' , component : ForgotPasswordComponent},
 
   {path : 'admin/dashboard' , component : AdminDashboardComponent},
+  {path : 'admin' , component : AdminDashboardComponent},
   {path : 'admin/profile' , component : AdminProfileComponent},
   {path : 'admin/banner' , component : AdminBannerComponent},
   {path : 'admin/add-banner' , component : AdminAddBannerComponent},
@@ -68,10 +86,18 @@ const routes: Routes = [
   {path : 'admin/add-blog' , component : AdminAddBlogComponent},
   {path : 'admin/attorney' , component : AdminAttorneyComponent},
   {path : 'admin/add-attorney' , component : AdminAddAttorneyComponent},
+  {path : 'admin/attorney-detail' , component : AdminAttorneyDetailComponent},
   {path : 'admin/user' , component : AdminUserComponent},
-  {path : 'admin/comment' , component : AdminCommentComponent},
+  {path : 'admin/legal-case' , component : AdminLegalCaseComponent},
+  {path : 'admin/add-legal-case' , component : AdminAddLegalCaseComponent},
+  {path : 'admin/online-request' , component : AdminOnlineRequestComponent},
+  {path : 'admin/tel-request' , component : AdminTelRequestComponent},
+  {path : 'admin/in-person-request' , component : AdminInPersonRequestComponent},
+  {path : 'admin/consultor' , component : AdminConsultorComponent},
+  {path : 'admin/add-consultor' , component : AdminAddConsultorComponent},
 
   {path : 'attorney/dashboard' , component : AttorneyDashboardComponent},
+  {path : 'attorney' , component : AttorneyDashboardComponent},
   {path : 'attorney/info' , component : AttorneyEssentialInfoComponent},
   {path : 'attorney/profile' , component : AttorneyProfileComponent},
   {path : 'attorney/work' , component : AttorneyWorkComponent},
@@ -80,6 +106,13 @@ const routes: Routes = [
   {path : 'attorney/add-education' , component : AttorneyAddEducationComponent},
   {path : 'attorney/legal-case' , component : AttorneyLegalCaseComponent},
   {path : 'attorney/tel-consultation' , component : AttorneyTelConsultationComponent},
+
+  {path : 'user/dashboard' , component : UserDashboardComponent},
+  {path : 'user' , component : UserDashboardComponent},
+  {path : 'user/profile' , component : UserProfileComponent},
+
+  {path : 'consultor/dashboard' , component : ConsultorDashboardComponent},
+  {path : 'consultor' , component : ConsultorDashboardComponent},
 
   {path : '**' , component : HomeComponent}
 ];

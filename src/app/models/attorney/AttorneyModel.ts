@@ -11,14 +11,13 @@ export class AttorneyModel{
     public fatherName: string,
     public address: string,
     public date: string,
-    public educationList: AttorneyEducationModel[],
-    public workList: AttorneyWorkModel[],
+    public educationList: AttorneyEducationModel[] = [],
+    public workList: AttorneyWorkModel[] = [],
     public booklet: string,
     public license: string,
     public resume: string,
     public type: LegalUserType,
     public licenseValidityDate: string,
-    public isExpanded: boolean,
     public mobile: string
   ) {
   }
@@ -27,6 +26,7 @@ export class AttorneyModel{
 export class AttorneyEducationModel{
   constructor(
     public id: number,
+    public attorneyId: number,
     public university: string,
     public grade: string,
     public major: string,
@@ -43,6 +43,7 @@ export class AttorneyEducationModel{
 export class AttorneyWorkModel{
   constructor(
     public id: number,
+    public attorneyId: number,
     public company: string,
     public position: string,
     public startYear: string,

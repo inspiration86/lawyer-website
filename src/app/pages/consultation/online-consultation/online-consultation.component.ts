@@ -23,8 +23,8 @@ export class OnlineConsultationComponent implements OnInit {
       { type: 'pattern', message: 'لطفا شماره موبایل معتبر وارد کنید.' }
     ],
     comment: [
-      { type: 'required', message: 'نظر/پیام را وارد کنید.' },
-      { type: 'maxlength', message: 'نظر/پیام نمی تواند بیشتر از 500 کاراکتر باشد.' }
+      { type: 'required', message: 'توضیحات را وارد کنید.' },
+      { type: 'maxlength', message: 'توضیحات نمی تواند بیشتر از 500 کاراکتر باشد.' }
     ]
   };
 

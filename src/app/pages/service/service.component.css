@@ -5,7 +5,7 @@
   text-align: center;
   margin-bottom: 30px;
   padding: 45px 15px;
-  background-color: #1d1c1c;
+  background-color: #037160;
   position: relative;
   overflow: hidden;
   color: #fff;
@@ -58,7 +58,7 @@
   }
 }
 
-.practice-item:hover{background-color:#037160;transform:translateY(-10px)}
+.practice-item:hover{background-color:#1d1c1c;transform:translateY(-10px)}
 .practice-item:hover .practice-icon mat-icon{color:#fff}
 .practice-item a:hover {
   color: #333;
@@ -152,15 +152,15 @@
 .practice-item .practice-icon:before {
   top: -5px;
   z-index: -1;
-  background-color: #4c4b4b;
+  background-color: #589183;
 }
 .practice-item .practice-icon:after {
   top: -15px;
   z-index: -2;
-  background-color: #2d2c2c;
+  background-color: #70aca0;
 }
 .practice-item:hover .practice-icon:before {
-  background-color: #015648;
+  background-color: #037160;
   transform: rotate(135deg);
 }
 .practice-item:hover .practice-icon:after {
